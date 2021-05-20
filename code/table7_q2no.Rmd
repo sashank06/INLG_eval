@@ -1,0 +1,92 @@
+---
+title: "Table 7"
+author: "Sashank"
+date: "7/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+```{r}
+library(irr)
+library(psych)
+library(readxl)
+```
+
+```{r}
+LS_read_ratings <- read_excel("Likert Scale/all_completed_ranked_new.xlsx", sheet = "read_q2no")
+LS_coh_ratings <- read_excel("Likert Scale/all_completed_ranked_new.xlsx", sheet = "cohe_q2no")
+```
+
+
+```{r}
+icc(LS_read_ratings, model="twoway", type="consistency",unit="a")
+icc(LS_coh_ratings, model="twoway", type="consistency",unit="a")
+```
+
+```{r}
+icc(LS_read_ratings, model="twoway", type="agreement",unit="a")
+icc(LS_coh_ratings, model="twoway", type="agreement",unit="a")
+```
+
+```{r}
+RME_read_ratings <- read_excel("RME/all_completed_modified.xlsx", sheet = "read_q2no")
+RME_coh_ratings <- read_excel("RME/all_completed_modified.xlsx", sheet = "cohe_q2no")
+
+```
+
+
+
+```{r}
+icc(RME_read_ratings, model="twoway", type="consistency",unit="a")
+icc(RME_coh_ratings, model="twoway", type="consistency",unit="a")
+```
+
+```{r}
+icc(RME_read_ratings, model="twoway", type="agreement",unit="a")
+icc(RME_coh_ratings, model="twoway", type="agreement",unit="a")
+```
+
+
+```{r}
+BME_read_ratings <- read_excel("BME/all_completed_modified.xlsx", sheet = "read_q2no")
+BME_coh_ratings <- read_excel("BME/all_completed_modified.xlsx", sheet = "cohe_q2no")
+
+```
+
+
+```{r}
+icc(BME_read_ratings, model="twoway", type="consistency",unit="a")
+icc(BME_coh_ratings, model="twoway", type="consistency",unit="a")
+```
+```{r}
+icc(BME_read_ratings, model="twoway", type="agreement",unit="a")
+icc(BME_coh_ratings, model="twoway", type="agreement",unit="a")
+```
+
+```{r}
+RR_read_ratings <- read_excel("RR/all_completed_modified.xlsx", sheet = "read_q2no")
+RR_coh_ratings <- read_excel("RR/all_completed_modified.xlsx", sheet = "cohe_q2no")
+#RR_read_ratings <- RR_read_ratings[,1:26]
+#RR_coh_ratings <- RR_coh_ratings[,1:26]
+```
+
+
+
+```{r}
+icc(RR_read_ratings, model="twoway", type="consistency",unit="a")
+icc(RR_coh_ratings, model="twoway", type="consistency",unit="a")
+```
+```{r}
+icc(RR_read_ratings, model="twoway", type="agreement",unit="a")
+icc(RR_coh_ratings, model="twoway", type="agreement",unit="a")
+```
