@@ -1,6 +1,6 @@
 # Code repository for the paper titled "Towards Best Experiment Design for Evaluating Dialogue System Output" published @ INLG 2019
-#More detailed readme and data files will be added soon. Cleaning some crowdsourced worked identifiable information.
 
+#Data files available at this location:[Click here](https://drive.google.com/drive/folders/1lt2YiobxFBTz7ZlGsUKyHeBBPE76ijXa?usp=sharing)
 ```
 @inproceedings{santhanam-shaikh-2019-towards,
     title = "Towards Best Experiment Design for Evaluating Dialogue System Output",
