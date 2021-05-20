@@ -1,0 +1,124 @@
+---
+title: "LS Correlation analysis"
+author: "Sashank"
+date: "9/7/2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+library(tidyverse) # general utility & workflow functions
+library(tidytext) # tidy implimentation of NLP methods
+library(readxl)
+```
+
+```{r}
+read_ratings <- read_excel("Likert Scale/correlation_ranks.xlsx", sheet = "read_rank")
+cohe_ratings <- read_excel("Likert Scale/correlation_ranks.xlsx", sheet = "cohe_rank")
+```
+
+#readability
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_all, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_all,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_above, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_above,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_below, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_rank_below,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q1yes, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q1yes,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q1no, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q1no,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q2yes, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q2yes,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q2no, 
+                    method = "spearman")
+res
+res2 <- cor.test(read_ratings$`Ground Truth`, read_ratings$read_q2no,  method="kendall")
+res2
+```
+
+#Coherence
+
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_all, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_all,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_above, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_above,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_below, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_rank_below,  method="kendall")
+res2
+```
+
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q1yes, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q1yes,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q1no, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q1no,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2yes, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2yes,  method="kendall")
+res2
+```
+```{r}
+res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2no, 
+                method = "spearman")
+res
+res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2no,  method="kendall")
+res2
